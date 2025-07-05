@@ -4,6 +4,8 @@
 ### C ###
 # Prerequisites
 *.d
+echo_client
+echo_server
 
 # Object files
 *.o
