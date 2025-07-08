@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -O0 -Wall -I . -g
+CFLAGS = -O0 -Wall -I . -Wno-restrict -Wno-format-overflow -g
 # CFLAGS = -O2 -Wall -I . -g
 
 # This flag includes the Pthreads library on a Linux box.

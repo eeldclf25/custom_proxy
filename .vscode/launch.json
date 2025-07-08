@@ -48,9 +48,9 @@
                 //     "ignoreFailures": false
                 // }
             ],
-            "sourceFileMap": {
-                "/workspaces/webproxy_lab_docker": "${workspaceFolder}"
-            }
+            // "sourceFileMap": {
+            //     "/workspaces/webproxy_lab_docker": "${workspaceFolder}"
+            // }
         },
         {
             "name": "Debug Proxy Server",
@@ -99,9 +99,9 @@
                 //     "ignoreFailures": false
                 // }
             ],
-            "sourceFileMap": {
-                "/workspaces/webproxy_lab_docker": "${workspaceFolder}"
-            }
+            // "sourceFileMap": {
+            //     "/workspaces/webproxy_lab_docker": "${workspaceFolder}"
+            // }
         }
     ]
 }
