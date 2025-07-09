@@ -807,14 +807,14 @@ static ssize_t rio_read(rio_t *rp, char *usrbuf, size_t n)
     int cnt;
 
     while (rp->rio_cnt <= 0) {  /* Refill if buf is empty */
-        int flags = fcntl(rp->rio_fd, F_GETFL, 0);
-        fcntl(rp->rio_fd, F_SETFL, flags | O_NONBLOCK);
+        // int flags = fcntl(rp->rio_fd, F_GETFL, 0);
+        // fcntl(rp->rio_fd, F_SETFL, flags | O_NONBLOCK);
 	    rp->rio_cnt = read(rp->rio_fd, rp->rio_buf, sizeof(rp->rio_buf));
-        fcntl(rp->rio_fd, F_SETFL, flags);
+        // fcntl(rp->rio_fd, F_SETFL, flags);
 	if (rp->rio_cnt < 0) {
-        if (errno == EAGAIN || errno == EWOULDBLOCK)
-            return 0;
-	    else if (errno != EINTR) /* Interrupted by sig handler return */
+        // if (errno == EAGAIN || errno == EWOULDBLOCK)
+        //     return 0;
+	    if (errno != EINTR) /* Interrupted by sig handler return */
             return -1;
 	}
 	else if (rp->rio_cnt == 0)  /* EOF */

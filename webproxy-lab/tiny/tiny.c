@@ -48,14 +48,14 @@ void doit(int fd)
   struct stat sbuf;
   char buf[MAXLINE], method[MAXLINE], uri[MAXLINE], version[MAXLINE], filename[MAXLINE], cgiarge[MAXLINE];
   Rio_readinitb(&rio, fd);
-  if (!(Rio_readlineb(&rio, buf, MAXLINE))) {
-    printf("no-data socket\n");
-    return;
-  }
-  // Rio_readlineb(&rio, buf, MAXLINE);
+  // if (!(Rio_readlineb(&rio, buf, MAXLINE))) {
+  //   printf("no-data socket\n");
+  //   return;
+  // }
+  Rio_readlineb(&rio, buf, MAXLINE);
   sscanf(buf, "%s %s %s", method, uri, version);
   printf("Request headers : \n");
-  printf("%s\n", buf);
+  printf("%s", buf);
   
   if (strcasecmp(method, "GET")) { // 해당 문자가 (대소문자 제외)정확하면 0, 이외는 양수나 음수
     clienterror(fd, method, "501", "Not implemented", "Tiny does not implement this method");
